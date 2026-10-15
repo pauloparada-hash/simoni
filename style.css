@@ -1,0 +1,122 @@
+/* ====== CORES: mude aqui para ajustar o tom de roxo ====== */
+:root {
+  --fundo: #2b1148;        /* roxo escuro do fundo */
+  --fundo-claro: #4a1f7a;  /* roxo do degradê */
+  --papel: #f5effc;        /* cor do caderno */
+  --linha: #d9c7f0;        /* linhas do caderno */
+  --destaque: #7b2fd1;     /* roxo principal */
+  --margem: #e66fb5;       /* linha da margem */
+  --texto: #3a2358;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  min-height: 100vh;
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--texto);
+  background: radial-gradient(circle at 20% 0%, var(--fundo-claro), var(--fundo) 60%) fixed;
+  display: grid;
+  place-items: start center;
+  padding: 32px 16px 56px;
+}
+
+/* ====== CADERNO ====== */
+.caderno {
+  width: min(680px, 100%);
+  background-color: var(--papel);
+  background-image:
+    linear-gradient(to right, transparent 54px, var(--margem) 54px, var(--margem) 56px, transparent 56px),
+    repeating-linear-gradient(transparent 0 35px, var(--linha) 35px 36px);
+  border-radius: 6px 18px 18px 6px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45), inset 10px 0 0 rgba(123,47,209,.18);
+  padding: 40px 32px 44px 78px;
+  position: relative;
+}
+.caderno::before { /* furinhos */
+  content: "";
+  position: absolute; left: 14px; top: 28px; bottom: 28px; width: 14px;
+  background: radial-gradient(circle, var(--fundo) 0 6px, transparent 7px) 0 0 / 14px 72px repeat-y;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 6vw, 2.7rem);
+  line-height: 1.2;
+  color: var(--destaque);
+  margin-bottom: 36px;
+}
+p { font-size: 1.05rem; line-height: 36px; margin-bottom: 36px; }
+p.final { font-family: "Caveat", cursive; font-weight: 700; font-size: 1.7rem; color: var(--destaque); margin-bottom: 0; }
+
+/* ====== FOTOS (polaroids) ====== */
+.fotos {
+  height: 288px;                 /* 8 linhas do caderno */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.polaroid {
+  width: calc(50% - 8px);
+  max-width: 220px;
+  background: #fff;
+  padding: 10px 10px 0;
+  box-shadow: 0 8px 20px rgba(43,17,72,.28);
+  position: relative;
+  transform: rotate(-3deg);
+}
+.polaroid:nth-child(even) { transform: rotate(2.5deg); }
+.polaroid::before { /* fita adesiva */
+  content: "";
+  position: absolute; top: -10px; left: 50%;
+  width: 64px; height: 20px; margin-left: -32px;
+  background: rgba(230,111,181,.55);
+  transform: rotate(-2deg);
+}
+.polaroid img, .polaroid .vazio {
+  display: block; width: 100%; height: 190px; object-fit: cover;
+}
+.polaroid .vazio {
+  background: repeating-linear-gradient(45deg, #efe4fb 0 10px, #e6d6f7 10px 20px);
+  display: grid; place-items: center;
+  color: var(--destaque); font-weight: 600; font-size: .9rem; text-align: center;
+}
+.polaroid figcaption {
+  font-family: "Caveat", cursive; font-size: 1.3rem; line-height: 36px;
+  height: 40px; text-align: center; color: var(--destaque);
+}
+
+/* ====== BOTÃO E ÁREA QUE ABRE ====== */
+.botao-area { height: 72px; display: flex; align-items: center; }
+button {
+  font: 600 1.05rem "Nunito", sans-serif;
+  background: var(--destaque);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #4f1a8c;
+  transition: transform .15s, box-shadow .15s;
+}
+button:hover { transform: translateY(2px); box-shadow: 0 4px 0 #4f1a8c; }
+button:active { transform: translateY(6px); box-shadow: 0 0 0 #4f1a8c; }
+button:focus-visible { outline: 3px solid var(--margem); outline-offset: 3px; }
+
+#recado { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .8s ease; }
+#recado.aberto { grid-template-rows: 1fr; }
+#recado > div { overflow: hidden; }
+#recado .conteudo { padding-top: 36px; }
+
+@media (prefers-reduced-motion: reduce) {
+  #recado, button { transition: none; }
+}
+
+/* ====== CELULAR ====== */
+@media (max-width: 480px) {
+  .caderno { padding: 32px 16px 36px 64px; }
+  .polaroid img, .polaroid .vazio { height: 150px; }
+  .fotos { gap: 10px; }
+}

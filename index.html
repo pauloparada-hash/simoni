@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feliz Dia dos Professores, professora Simoni!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Caveat:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="caderno">
+
+  <h1>Feliz Dia dos Professores, professora Simoni! ❤️</h1>
+
+  <!-- ====== BOTÃO: texto editável aqui e no script lá embaixo ====== -->
+  <div class="botao-area">
+    <button id="botao" aria-expanded="false" aria-controls="recado">Abrir meu recado</button>
+  </div>
+
+  <!-- ====== TUDO ABAIXO FICA ESCONDIDO ATÉ APERTAR O BOTÃO ====== -->
+  <section id="recado">
+   <div>
+    <div class="conteudo">
+
+  <p>Hoje é um dia especial para agradecer e reconhecer pessoas que fazem a diferença na vida de tantos alunos. E eu não poderia deixar essa data passar sem escrever algumas palavras para você.</p>
+
+  <!-- ====== FOTOS 1 e 2 ======
+       Coloque as imagens na mesma pasta do index.html com os nomes
+       foto1.jpg, foto2.jpg ... foto8.jpg (ou troque o nome no src) -->
+  <div class="fotos">
+    <figure class="polaroid">
+      <img src="foto1.jpeg" alt="Foto 1">
+      <figcaption>Legenda 1</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="foto2.jpeg" alt="Foto 2">
+      <figcaption>Legenda 2</figcaption>
+    </figure>
+  </div>
+
+  <p>Ser professora vai muito além de ensinar uma matéria ou passar atividades. É saber ouvir, aconselhar, incentivar, ter paciência e estar presente nos momentos em que um aluno precisa de alguém. E você consegue fazer tudo isso de uma maneira muito especial.</p>
+
+  <p>Quero agradecer por cada ensinamento, cada conversa, cada conselho, cada risada e por todos os momentos que fizeram parte dessa caminhada. Muitas vezes, pequenas atitudes podem parecer simples para quem faz, mas acabam significando muito para quem recebe. E tenho certeza de que muitas das suas palavras e atitudes ficarão guardadas com muito carinho.</p>
+
+  <!-- ====== FOTOS 3 e 4 ====== -->
+  <div class="fotos">
+    <figure class="polaroid">
+      <img src="foto3.jpeg" alt="Foto 3">
+      <figcaption>Legenda 3</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="foto4.jpeg" alt="Foto 4">
+      <figcaption>Legenda 4</figcaption>
+    </figure>
+  </div>
+
+  <p>Você é uma daquelas professoras que não são lembradas apenas pelo que ensinaram, mas principalmente pela pessoa que foram. Uma professora querida, que consegue criar uma conexão com seus alunos e tornar os momentos na escola muito mais especiais.</p>
+
+  <p>Sou muito grato por ter tido a oportunidade de conhecer você e aprender não apenas dentro da sala de aula, mas também através da pessoa incrível que você é. Espero que você saiba o quanto é importante e o quanto seu trabalho realmente faz diferença.</p>
+
+  <!-- ====== FOTOS 5 e 6 ====== -->
+  <div class="fotos">
+    <figure class="polaroid">
+      <img src="foto5.jpeg" alt="Foto 5">
+      <figcaption>Legenda 5</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="foto6.jpeg" alt="Foto 6">
+      <figcaption>Legenda 6</figcaption>
+    </figure>
+  </div>
+
+  <p>Que você nunca deixe de acreditar no valor daquilo que faz. Cada aluno que passa pela sua vida leva um pouquinho dos seus ensinamentos consigo, e isso é algo que nenhuma nota ou prova consegue medir.</p>
+
+  <p>Obrigado por toda dedicação, carinho, paciência e por ser uma professora tão especial.</p>
+
+  <!-- ====== FOTOS 7 e 8 ====== -->
+  <div class="fotos">
+    <figure class="polaroid">
+      <img src="foto7.jpeg" alt="Foto 7">
+      <figcaption>Legenda 7</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="foto8.jpeg" alt="Foto 8">
+      <figcaption>Legenda 8</figcaption>
+    </figure>
+  </div>
+
+  <p>Desejo que você continue tendo muitos motivos para sorrir, que tenha orgulho de tudo o que construiu e que nunca se esqueça da marca que deixa na vida de cada aluno que passa pelo seu caminho.</p>
+
+  <p class="final">Você é uma professora incrível e merece todo o carinho e reconhecimento do mundo. ❤️</p>
+  <p class="final">Com amor Isa e Paulo!!! Para SIMONIIIII!!!! ❤️</p>
+
+    </div>
+   </div>
+  </section>
+
+</main>
+
+<script>
+  const botao = document.getElementById("botao");
+  const recado = document.getElementById("recado");
+
+  botao.addEventListener("click", () => {
+    const aberto = recado.classList.toggle("aberto");
+    botao.setAttribute("aria-expanded", aberto);
+    botao.textContent = aberto ? "Fechar recado" : "Abrir meu recado";
+  });
+</script>
+
+</body>
+</html>
